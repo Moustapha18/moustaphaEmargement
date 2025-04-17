@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.projetdemargement.controllers.RegisterController"
+            prefWidth="800" prefHeight="600"
+            style="-fx-background-color: linear-gradient(to right, #141e30, #243b55);">
+
+    <VBox alignment="CENTER" spacing="20"
+          AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+          AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"
+          style="-fx-padding: 50;">
+
+        <Label text="Créer un compte"
+               style="-fx-font-size: 28px; -fx-text-fill: white; -fx-font-weight: bold;" />
+
+        <TextField fx:id="nomField" promptText="Nom"
+                   style="-fx-background-radius: 6; -fx-background-color: #f2f2f2;" prefWidth="350"/>
+        <TextField fx:id="prenomField" promptText="Prénom"
+                   style="-fx-background-radius: 6; -fx-background-color: #f2f2f2;" prefWidth="350"/>
+        <TextField fx:id="emailField" promptText="Email"
+                   style="-fx-background-radius: 6; -fx-background-color: #f2f2f2;" prefWidth="350"/>
+        <PasswordField fx:id="passwordField" promptText="Mot de passe"
+                       style="-fx-background-radius: 6; -fx-background-color: #f2f2f2;" prefWidth="350"/>
+        <ComboBox fx:id="roleComboBox" promptText="Choisir un rôle"
+                  style="-fx-background-radius: 6;" prefWidth="350"/>
+
+        <HBox spacing="20" alignment="CENTER">
+            <Button text="S'inscrire"
+                    onAction="#handleRegister"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 6;"
+                    prefWidth="160" prefHeight="40"/>
+
+            <Button text="⬅ Retour"
+                    onAction="#goBack"
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 6;"
+                    prefWidth="160" prefHeight="40"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.projetdemargement.controllers.GestionnaireCoursController"
+            prefWidth="900" prefHeight="600"
+            style="-fx-background-color: linear-gradient(to right, #141e30, #243b55); -fx-padding: 30px;">
+
+    <VBox spacing="20" alignment="TOP_CENTER"
+          AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+          VBox.vgrow="ALWAYS">
+
+        <Label text="📚 Gestion des Cours"
+               style="-fx-font-size: 26px; -fx-text-fill: #f1c40f; -fx-font-weight: bold;" />
+
+        <TableView fx:id="coursTable" VBox.vgrow="ALWAYS"
+                   style="-fx-background-color: white;">
+            <columns>
+                <TableColumn text="ID" fx:id="idColumn" prefWidth="50"/>
+                <TableColumn text="Nom du Cours" fx:id="nomColumn" prefWidth="150"/>
+                <TableColumn text="Date" fx:id="dateColumn" prefWidth="120"/>
+                <TableColumn text="Début" fx:id="heureDebutColumn" prefWidth="100"/>
+                <TableColumn text="Fin" fx:id="heureFinColumn" prefWidth="100"/>
+                <TableColumn text="Salle" fx:id="salleColumn" prefWidth="150"/>
+                <TableColumn text="Professeur" fx:id="professeurColumn" prefWidth="150"/>
+            </columns>
+        </TableView>
+
+        <HBox spacing="15">
+            <TextField fx:id="nomField" promptText="Nom du cours" prefWidth="200"/>
+            <DatePicker fx:id="datePicker" prefWidth="200"/>
+        </HBox>
+
+        <HBox spacing="15">
+            <ComboBox fx:id="salleComboBox" promptText="Salle" prefWidth="200"/>
+            <ComboBox fx:id="professeurComboBox" promptText="Professeur" prefWidth="200"/>
+        </HBox>
+
+        <TextField fx:id="descriptionField" promptText="Description du cours" prefWidth="415"/>
+
+        <HBox spacing="15" alignment="CENTER">
+            <Label text="Début:" style="-fx-text-fill: white;"/>
+            <Spinner fx:id="heureDebutSpinner" editable="true" prefWidth="100"/>
+            <Label text="Fin:" style="-fx-text-fill: white;"/>
+            <Spinner fx:id="heureFinSpinner" editable="true" prefWidth="100"/>
+        </HBox>
+
+        <HBox spacing="15">
+            <Button text="➕ Ajouter" fx:id="addButton" prefWidth="120"
+                    style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            <Button text="✏️ Modifier" fx:id="updateButton" prefWidth="120"
+                    style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            <Button text="🗑 Supprimer" fx:id="deleteButton" prefWidth="120"
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </HBox>
+
+        <Button fx:id="backButton" text="⬅ Retour" onAction="#handleBackButtonAction"
+                style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 14px;"
+                prefWidth="120"/>
+    </VBox>
+</AnchorPane>

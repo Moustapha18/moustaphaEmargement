@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.projetdemargement.controllers.ViewCoursesController"
+            prefWidth="800" prefHeight="600"
+            style="-fx-background-color: linear-gradient(to right, #141e30, #243b55); -fx-padding: 30px;">
+
+    <VBox spacing="20" alignment="CENTER"
+          AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+          AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+
+        <Label text="📚 Liste des Cours"
+               style="-fx-font-size: 26px; -fx-text-fill: #f1c40f; -fx-font-weight: bold;" />
+
+        <TableView fx:id="coursesTable" prefHeight="400" style="-fx-background-color: white;">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="nameColumn" text="Nom du Cours" prefWidth="150"/>
+                <TableColumn fx:id="dateColumn" text="Date" prefWidth="120"/>
+                <TableColumn fx:id="startTimeColumn" text="Début" prefWidth="100"/>
+                <TableColumn fx:id="endTimeColumn" text="Fin" prefWidth="100"/>
+                <TableColumn fx:id="roomColumn" text="Salle" prefWidth="100"/>
+                <TableColumn fx:id="professorColumn" text="Professeur" prefWidth="150"/>
+            </columns>
+        </TableView>
+
+        <Button fx:id="backButton" text="⬅ Retour"
+                onAction="#handleBackButtonAction"
+                style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 14px;"
+                prefWidth="120"/>
+    </VBox>
+</AnchorPane>
+
+
+

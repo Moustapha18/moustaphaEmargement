@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.projetdemargement.controllers.HistoriqueEmargementController"
+            style="-fx-background-color: linear-gradient(to right, #141e30, #243b55); -fx-padding: 30px;"
+            prefWidth="900" prefHeight="600">
+
+    <VBox spacing="20" alignment="CENTER"
+          AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+          AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+
+        <Label text="🕓 Historique des Émargements"
+               style="-fx-font-size: 26px; -fx-text-fill: #f1c40f; -fx-font-weight: bold;" />
+
+        <TableView fx:id="historiqueTable" VBox.vgrow="ALWAYS"
+                   style="-fx-background-color: white; -fx-border-radius: 10px;">
+            <columns>
+                <TableColumn fx:id="dateColumn" text="📅 Date" prefWidth="150"/>
+                <TableColumn fx:id="coursColumn" text="📘 Cours" prefWidth="200"/>
+                <TableColumn fx:id="professeurColumn" text="👨‍🏫 Professeur" prefWidth="200"/>
+                <TableColumn fx:id="statutColumn" text="📌 Statut" prefWidth="150"/>
+            </columns>
+        </TableView>
+
+        <HBox spacing="20" alignment="CENTER">
+            <Button fx:id="exportPdfButton" text="📄 Exporter PDF"
+                    style="-fx-background-color: #d35400; -fx-text-fill: white; -fx-font-size: 14px;" prefWidth="150" prefHeight="40"/>
+            <Button fx:id="exportExcelButton" text="📊 Exporter Excel"
+                    style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 14px;" prefWidth="150" prefHeight="40"/>
+            <Button fx:id="backButton" text="🔙 Retour"
+                    style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-size: 14px;" prefWidth="150" prefHeight="40"/>
+        </HBox>
+
+    </VBox>
+</AnchorPane>

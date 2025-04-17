@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.projetdemargement.controllers.ProfesseurEmargementController"
+            prefWidth="900" prefHeight="600"
+            style="-fx-background-color: linear-gradient(to right, #434343, #000000);">
+
+    <top>
+        <Label text="📝 Émargement des Cours"
+               style="-fx-font-size: 26px; -fx-text-fill: #f1c40f; -fx-padding: 20; -fx-font-weight: bold;" />
+    </top>
+
+    <center>
+        <VBox spacing="15" style="-fx-padding: 20;" VBox.vgrow="ALWAYS">
+            <TableView fx:id="coursTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+                    <TableColumn fx:id="nomColumn" text="Cours" prefWidth="120"/>
+                    <TableColumn fx:id="dateColumn" text="Date" prefWidth="100"/>
+                    <TableColumn fx:id="heureDebutColumn" text="Début" prefWidth="80"/>
+                    <TableColumn fx:id="heureFinColumn" text="Fin" prefWidth="80"/>
+                    <TableColumn fx:id="salleColumn" text="Salle" prefWidth="100"/>
+                    <TableColumn fx:id="statutColumn" text="Statut" prefWidth="100"/>
+                </columns>
+            </TableView>
+
+            <HBox spacing="10">
+                <Button fx:id="emargerButton"
+                        text="✅ Émarger"
+                        onAction="#handleEmargement"
+                        style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 14px;"
+                        prefWidth="150" prefHeight="40"/>
+
+                <Button fx:id="backButton"
+                        text="⬅ Retour"
+                        onAction="#goBack"
+                        style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-font-size: 14px;"
+                        prefWidth="120" prefHeight="40"/>
+            </HBox>
+
+            <Label fx:id="statusLabel"
+                   style="-fx-text-fill: #ecf0f1; -fx-font-size: 14px;" />
+        </VBox>
+    </center>
+</BorderPane>

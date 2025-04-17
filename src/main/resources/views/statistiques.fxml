@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.projetdemargement.controllers.StatistiquesController"
+            style="-fx-background-color: linear-gradient(to right, #1e3c72, #2a5298); -fx-padding: 30;"
+            prefWidth="1000" prefHeight="700">
+
+    <top>
+        <VBox alignment="CENTER" spacing="15">
+            <Text text="📊 Statistiques des Émargements"
+                  style="-fx-fill: white; -fx-font-size: 28px; -fx-font-weight: bold;" />
+            <Button fx:id="backButton" text="⬅ Retour au menu"
+                    style="-fx-background-color: #FF9800; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 6;"
+                    prefWidth="200" prefHeight="40"/>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="30" alignment="CENTER">
+            <HBox spacing="30" alignment="CENTER">
+                <PieChart fx:id="emargementChart" prefHeight="350" prefWidth="450"
+                          style="-fx-background-color: transparent;" />
+                <BarChart fx:id="barChart" title="Présences par Professeur" prefHeight="350" prefWidth="450">
+                    <xAxis>
+                        <CategoryAxis label="Professeur" />
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis label="Présences" />
+                    </yAxis>
+                </BarChart>
+            </HBox>
+
+            <LineChart fx:id="lineChart" title="Évolution des Présences" prefHeight="300" prefWidth="900">
+                <xAxis>
+                    <CategoryAxis label="Date" />
+                </xAxis>
+                <yAxis>
+                    <NumberAxis label="Présences" />
+                </yAxis>
+            </LineChart>
+        </VBox>
+    </center>
+</BorderPane>

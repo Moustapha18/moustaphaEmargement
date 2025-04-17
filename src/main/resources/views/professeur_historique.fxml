@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.projetdemargement.controllers.ProfesseurHistoriqueController"
+            prefWidth="900" prefHeight="600"
+            style="-fx-background-color: linear-gradient(to bottom, #2c3e50, #4ca1af); -fx-padding: 30px;">
+
+    <top>
+        <Label text="📜 Historique des Émargements"
+               style="-fx-font-size: 26px; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 20px 0;" />
+    </top>
+
+    <center>
+        <VBox spacing="20" alignment="CENTER" style="-fx-padding: 20;">
+            <TableView fx:id="historiqueTable"
+                       prefHeight="400"
+                       style="-fx-background-color: white; -fx-border-radius: 10;">
+                <columns>
+                    <TableColumn fx:id="coursColumn" text="Cours" prefWidth="200"/>
+                    <TableColumn fx:id="dateColumn" text="Date" prefWidth="150"/>
+                    <TableColumn fx:id="heureDebutColumn" text="Début" prefWidth="100"/>
+                    <TableColumn fx:id="heureFinColumn" text="Fin" prefWidth="100"/>
+                    <TableColumn fx:id="statutColumn" text="Statut" prefWidth="120"/>
+                </columns>
+            </TableView>
+
+            <Button text="⬅ Retour" onAction="#goBack"
+                    style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-font-size: 15px; -fx-font-weight: bold; -fx-background-radius: 8;"
+                    prefWidth="150" prefHeight="40"/>
+        </VBox>
+    </center>
+</BorderPane>

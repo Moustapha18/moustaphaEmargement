@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.projetdemargement.controllers.ManageUsersController"
+            prefWidth="900" prefHeight="600"
+            style="-fx-background-color: linear-gradient(to right, #1d2b64, #f8cdda); -fx-padding: 30px;">
+
+    <VBox spacing="20" alignment="CENTER"
+          AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+          AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+
+        <Label text="👥 Gestion des Utilisateurs"
+               style="-fx-font-size: 26px; -fx-text-fill: white; -fx-font-weight: bold;" />
+
+        <TableView fx:id="userTable" prefHeight="250" prefWidth="850"
+                   style="-fx-background-color: #ffffff; -fx-border-radius: 10;">
+            <columns>
+                <TableColumn fx:id="idColumn" text="🆔 ID" prefWidth="60"/>
+                <TableColumn fx:id="nomColumn" text="Nom" prefWidth="140"/>
+                <TableColumn fx:id="prenomColumn" text="Prénom" prefWidth="140"/>
+                <TableColumn fx:id="emailColumn" text="Email" prefWidth="200"/>
+                <TableColumn fx:id="roleColumn" text="Rôle" prefWidth="120"/>
+            </columns>
+        </TableView>
+
+        <HBox spacing="15" alignment="CENTER">
+            <TextField fx:id="nomField" promptText="Nom" prefWidth="140"/>
+            <TextField fx:id="prenomField" promptText="Prénom" prefWidth="140"/>
+            <TextField fx:id="emailField" promptText="Email" prefWidth="180"/>
+            <PasswordField fx:id="passwordField" promptText="Mot de passe" prefWidth="150"/>
+            <ComboBox fx:id="roleComboBox" promptText="Rôle" prefWidth="140"/>
+        </HBox>
+
+        <HBox spacing="15" alignment="CENTER">
+            <Button fx:id="addButton" text="➕ Ajouter"
+                    style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+            <Button fx:id="updateButton" text="✏️ Modifier"
+                    style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+            <Button fx:id="deleteButton" text="🗑 Supprimer"
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+            <Button fx:id="backButton" text="🔙 Retour"
+                    onAction="#goBack"
+                    style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+        </HBox>
+
+    </VBox>
+</AnchorPane>
